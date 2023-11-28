@@ -5,9 +5,9 @@ number = random.randint(-10000, 10000)
 if number > 0:
     digit = number % 10
 else:
-    digit = -number % 10
+    digit = -1 * (-number % 10)
 
-print(f"Last digit of {number} is {digit}", end = ' ')
+print(f"Last digit of {number} is {digit}", end=' ')
 
 if digit > 5:
     print("and is greater than 5")
