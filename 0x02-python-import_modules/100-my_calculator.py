@@ -9,23 +9,16 @@ if __name__ == "__main__":
 
     if argc != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
-        sys.exit(1)
+        exit(1)
 
     a = int(argv[1])
     b = int(argv[3])
     op = argv[2]
+    f = {'+': add, '-': sub, '*': mul, '/': div}
 
-    match op:
-        case '+':
-            res = add(a, b)
-        case '-':
-            res = sub(a, b)
-        case '*':
-            res = mul(a, b)
-        case '/':
-            res = div(a, b)
-        case _:
-            print("Unknown operator. Available operators: +, -, * and /")
-            sys.exit(1)
+    if op not in f:
+        print("Unknown operator. Available operators: +, -, * and /")
+        sys.exit(1)
 
+    res = f[op](a, b)
     print(f"{a} {op} {b} = {res}")
