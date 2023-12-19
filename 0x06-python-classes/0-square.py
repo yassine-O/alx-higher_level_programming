@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+"""Module 0-square"""
+
 class Square:
-    """This is Square class documentation"""
+    """Square documentation"""
     pass
