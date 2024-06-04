@@ -9,7 +9,7 @@ request(url, function (error, response, body) {
     return;
   }
   const movie = JSON.parse(body);
-  for (const url in movie.characters) {
+  for (const url of movie.characters) {
     request(url, function (error, response, body) {
       if (error) {
         console.log(error);
