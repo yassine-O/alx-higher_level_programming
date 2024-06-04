@@ -9,7 +9,8 @@ request(url, function (error, response, body) {
     return;
   }
   const movie = JSON.parse(body);
-  for (let i = 0; i < movie.characters.length; i++) {
+  let i = 0;
+  while (i < movie.characters.length) {
     request(movie.characters[i], function (error, response, body) {
       if (error) {
         console.log(error);
@@ -17,5 +18,6 @@ request(url, function (error, response, body) {
       }
       console.log(JSON.parse(body).name);
     });
+    i++;
   }
 });
