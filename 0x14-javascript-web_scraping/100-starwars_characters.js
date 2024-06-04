@@ -9,8 +9,8 @@ request(url, function (error, response, body) {
     return;
   }
   const movie = JSON.parse(body);
-  for (let i = 0; i < movie.characters.length; i++) {
-    request(movie.characters[i], function (error, response, body) {
+  for (const url in movie.characters) {
+    request(url, function (error, response, body) {
       if (error) {
         console.log(error);
         return;
